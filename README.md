@@ -1,3 +1,4 @@
+[<img align="left" alt="linked-in" src="https://github.com/sebastianstrzalkowski/leverix_token/actions/workflows/test-token.yml/badge.svg" />](https://github.com/sebastianstrzalkowski/leverix_token/actions)
 ## Tests written using OpenZeppelin test suite
 
 ## Install truffle:
