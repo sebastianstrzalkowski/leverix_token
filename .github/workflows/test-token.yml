@@ -1,0 +1,25 @@
+name: Test token
+
+on:
+  push:
+    branches: [ "*"]
+  pull_request:
+    branches: [ "main"]
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3.3.0
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+      - run: npm install -g truffle
+      - run: truffle compile
+      - run: npm i
+      - run: npm test >> $GITHUB_STEP_SUMMARY
+
+
+
