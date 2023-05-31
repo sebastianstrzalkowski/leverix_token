@@ -2,7 +2,7 @@ name: Test token
 
 on:
   push:
-    branches: [ "main"]
+    branches: [ "*"]
   pull_request:
     branches: [ "main"]
   workflow_dispatch:
@@ -17,6 +17,9 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
       - run: npm install -g truffle
-      - run: npm test
+      - run: truffle compile
+      - run: npm i
+      - run: npm test >> $GITHUB_STEP_SUMMARY
+
 
 
